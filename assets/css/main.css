@@ -176,6 +176,24 @@ ul, ol {
   background: rgba(255, 255, 255, 0.95);
   display: flex;
   flex-direction: column;
+  color: #111111;
+}
+
+#main h1,
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6,
+#main p,
+#main li,
+#main dt,
+#main dd {
+  color: #111111;
+}
+
+#main a:not(.button) {
+  color: #111111;
 }
 
 .welcome-section {
@@ -187,13 +205,13 @@ ul, ol {
 
 .welcome-section h2 {
   font-size: 2.5rem;
-  color: #bfbfbf; /* darkened heading */
+  color: #111111;
   margin-bottom: 1rem;
 }
 
 .welcome-section p {
   font-size: 1.1rem;
-  color: #9f9f9f; /* darkened subtext */
+  color: #333333;
   margin: 0;
 }
 
@@ -230,10 +248,15 @@ ul, ol {
   border-bottom: 1px solid #eee;
 }
 
+.posts article header h3,
+.posts article h2 {
+  color: #111111;
+}
+
 .posts article .date {
   display: inline-block;
   font-size: 0.85rem;
-  color: #999;
+  color: #555;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-weight: 600;
@@ -278,7 +301,7 @@ ul, ol {
   flex: 1;
   display: flex;
   align-items: center;
-  color: #555;
+  color: #222222;
 }
 
 .posts article .actions {
@@ -519,4 +542,81 @@ input:focus, textarea:focus, select:focus {
 textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* ============================================
+   SUBPAGE LAYOUT (no tiles) - applied when body has .subpage
+   ============================================ */
+
+body.subpage .welcome-section {
+  text-align: left;
+  padding: 2rem 3rem;
+}
+
+body.subpage .posts {
+  display: block;
+  grid-template-columns: none;
+  gap: 0;
+  padding: 2.5rem 3rem;
+}
+
+body.subpage .posts article {
+  background: transparent;
+  box-shadow: none;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+  overflow: visible;
+  transform: none;
+  transition: none;
+  display: block;
+  padding: 0;
+}
+
+body.subpage .posts article header {
+  padding: 0 0 0.5rem 0;
+  border-bottom: none;
+}
+
+body.subpage .posts article .image {
+  height: auto;
+  max-height: 420px;
+}
+
+body.subpage .posts article .image img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+body.subpage .posts article p,
+body.subpage .posts article ul li {
+  font-size: 1.05rem;
+  color: #333333;
+  line-height: 1.85;
+  padding: 0 0 1rem 0;
+  margin: 0;
+}
+
+body.subpage .posts article ul {
+  padding-left: 1.25rem;
+  list-style: disc;
+  color: #333333;
+}
+
+body.subpage .posts article h3 {
+  color: #222222;
+  font-size: 1.4rem;
+  margin-bottom: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  body.subpage .welcome-section,
+  body.subpage .posts {
+    padding: 1.25rem;
+  }
+
+  body.subpage .posts article p,
+  body.subpage .posts article ul li {
+    font-size: 1rem;
+  }
 }
