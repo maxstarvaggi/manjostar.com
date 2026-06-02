@@ -143,30 +143,30 @@ ul, ol {
   color: #111111;
 }
 
-#main h1,
-#main h2,
-#main h3,
-#main h4,
-#main h5,
-#main h6 {
+body:not(.home) #main h1,
+body:not(.home) #main h2,
+body:not(.home) #main h3,
+body:not(.home) #main h4,
+body:not(.home) #main h5,
+body:not(.home) #main h6 {
   color: #111111;
 }
 
-#main p,
-#main li,
-#main dt,
-#main dd {
+body:not(.home) #main p,
+body:not(.home) #main li,
+body:not(.home) #main dt,
+body:not(.home) #main dd {
   color: #3a3a3a;
 }
 
-#main a:not(.button) {
+body:not(.home) #main a:not(.button) {
   color: #111111;
   text-decoration: underline;
   text-decoration-color: #cccccc;
   text-underline-offset: 3px;
 }
 
-#main a:not(.button):hover {
+body:not(.home) #main a:not(.button):hover {
   color: #555555;
   text-decoration-color: #999999;
 }
@@ -215,6 +215,7 @@ ul, ol {
   border: 1px solid #e8e8e8;
   border-radius: 10px;
   overflow: hidden;
+  position: relative;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   display: flex;
   flex-direction: column;
@@ -409,7 +410,7 @@ input[type="button"]:hover {
   max-width: 1200px;
   margin: 0 auto;
   font-size: 0.775rem;
-  color: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 #footer .footer-links {
@@ -418,7 +419,7 @@ input[type="button"]:hover {
 }
 
 #footer a {
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.62);
   transition: color 0.15s ease;
 }
 
@@ -453,6 +454,70 @@ hr {
   height: 1px;
   border: 0;
   margin: 2rem 0;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Canvas fills its parent hero section */
+#hero-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Staggered card entrance (homepage) --- */
+
+body.home .posts article {
+  animation: cardIn 0.55s ease-out both;
+}
+
+body.home .posts article:nth-child(1) { animation-delay: 0.08s; }
+body.home .posts article:nth-child(2) { animation-delay: 0.2s; }
+body.home .posts article:nth-child(3) { animation-delay: 0.32s; }
+
+@keyframes cardIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Card shimmer sweep on hover (homepage) --- */
+
+body.home .posts article::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    108deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.15) 50%,
+    transparent 80%
+  );
+  transform: translateX(-140%) skewX(-12deg);
+  transition: none;
+  pointer-events: none;
+  z-index: 2;
+}
+
+body.home .posts article:hover::after {
+  transform: translateX(140%) skewX(-12deg);
+  transition: transform 0.55s ease;
+}
+
+/* --- Scroll indicator --- */
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0);   opacity: 0.22; }
+  50%       { transform: translateX(-50%) translateY(7px); opacity: 0.5;  }
 }
 
 /* ============================================
@@ -585,6 +650,261 @@ input:focus, textarea:focus, select:focus {
 textarea {
   resize: vertical;
   min-height: 120px;
+}
+
+/* ============================================
+   HOMEPAGE
+   ============================================ */
+
+/* Hide the shared header; hero-nav replaces it */
+body.home #header {
+  display: none;
+}
+
+body.home #main {
+  background: transparent;
+  color: #d0d0d0;
+}
+
+/* --- Hero --- */
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  min-height: 480px;
+  background: #0a0a0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 90% 70% at 50% 0%, rgba(255, 255, 255, 0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 140% 140% at 50% 50%, transparent 38%, rgba(0, 0, 0, 0.55) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.25rem 1.75rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.125rem;
+}
+
+.hero-nav a {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 0.375rem 0.875rem;
+  border-radius: 6px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.hero-nav a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.hero-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 2rem;
+}
+
+.hero-content h1 {
+  font-size: 5.5rem;
+  color: #ffffff;
+  letter-spacing: -0.05em;
+  margin-bottom: 0.875rem;
+  animation: heroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin: 0;
+  animation: heroFadeUp 0.9s 0.15s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 1rem;
+  z-index: 2;
+  animation: scrollBounce 2.4s ease-in-out infinite;
+  user-select: none;
+}
+
+/* --- About --- */
+
+.about-section {
+  background: #0f0f0f;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  text-align: center;
+}
+
+.about-section h2 {
+  color: #ffffff;
+  font-size: 2.25rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+}
+
+.about-section > p {
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 540px;
+  margin: 0 auto 3.5rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.about-item {
+  padding: 1.75rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.025);
+  text-align: left;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.about-item:hover {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.about-item h3 {
+  color: #ffffff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+.about-item p {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.875rem;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* --- Projects --- */
+
+.projects-section {
+  background: #0a0a0a;
+  padding: 6rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.projects-section > h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.25rem;
+  letter-spacing: -0.03em;
+  margin-bottom: 3rem;
+}
+
+/* Dark card overrides */
+body.home .posts {
+  padding: 0;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+body.home .posts article {
+  background: #111111;
+  border-color: rgba(255, 255, 255, 0.07);
+}
+
+body.home .posts article:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+body.home .posts article header {
+  border-bottom-color: rgba(255, 255, 255, 0.05);
+}
+
+body.home .posts article .date {
+  color: rgba(255, 255, 255, 0.48);
+}
+
+body.home .posts article h2 {
+  color: #ffffff;
+}
+
+body.home .posts article h2 a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body.home .posts article h2 a:hover {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+}
+
+body.home .posts article p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+body.home .posts article .button {
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.11);
+}
+
+body.home .posts article .button:hover {
+  background: rgba(255, 255, 255, 0.13);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+body.home .posts article .button.disabled {
+  opacity: 0.3;
+}
+
+/* Homepage responsive */
+@media screen and (max-width: 768px) {
+  .hero-content h1    { font-size: 3.75rem; }
+  .about-section      { padding: 4.5rem 1.25rem; }
+  .about-grid         { grid-template-columns: 1fr; max-width: 480px; }
+  .projects-section   { padding: 4.5rem 1.25rem; }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-content h1    { font-size: 2.75rem; }
+  .hero-content p     { font-size: 0.7rem; letter-spacing: 0.18em; }
+  .hero-nav a         { padding: 0.35rem 0.625rem; font-size: 0.825rem; }
+  .about-section      { padding: 3.5rem 1rem; }
+  .about-section h2   { font-size: 1.75rem; }
+  .projects-section   { padding: 3.5rem 1rem; }
+  .projects-section > h2 { font-size: 1.75rem; margin-bottom: 2rem; }
 }
 
 /* ============================================
