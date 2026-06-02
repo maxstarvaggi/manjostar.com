@@ -291,7 +291,7 @@ body:not(.home) #main a:not(.button):hover {
 }
 
 /* Video embeds inside post articles */
-.posts article iframe {
+.posts article > iframe {
   max-width: 30%;
   height: auto;
   aspect-ratio: 16 / 9;
@@ -300,19 +300,18 @@ body:not(.home) #main a:not(.button):hover {
 }
 
 .video-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5rem;
-  background: #f6f6f6;
+  padding: 0 0 1.5rem;
+  background: transparent;
 }
 
 .video-wrapper iframe {
   width: 100%;
-  max-width: 640px;
+  max-width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
   border-radius: 8px;
+  display: block;
+  margin: 0;
 }
 
 /* ============================================
@@ -536,7 +535,7 @@ body.home .posts article:hover::after {
     gap: 1rem;
   }
 
-  .posts article iframe {
+  .posts article > iframe {
     max-width: 80%;
   }
 
@@ -579,7 +578,7 @@ body.home .posts article:hover::after {
     padding: 1.25rem 1rem;
   }
 
-  .posts article iframe {
+  .posts article > iframe {
     max-width: 100%;
   }
 
@@ -913,12 +912,12 @@ body.home .posts article .button.disabled {
 
 body.subpage .welcome-section {
   text-align: left;
-  padding: 2.5rem max(2rem, calc(50% - 380px));
+  padding: 2.5rem max(2rem, calc(50% - 480px));
 }
 
 body.subpage .posts {
   display: block;
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   width: 100%;
   padding: 0 2rem 3rem;
@@ -926,7 +925,7 @@ body.subpage .posts {
 }
 
 body.subpage .cta-section {
-  max-width: 760px;
+  max-width: 960px;
   margin: 0 auto;
   width: 100%;
   padding: 2rem;
