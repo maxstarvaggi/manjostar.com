@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Manjo Star</title>
+        <title>Private DNS Toggle - Manjo Star</title>
         <link rel="icon" type="image/png" href="/images/favicon.png">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -12,77 +12,80 @@
 
         <div id="wrapper">
 
-                <header id="header">
-                        <a href="/" class="logo">HOME</a>
-                    </header>
+            <header id="header">
+                <a href="/" class="logo">
+                    <img src="../images/logo.png" alt="Manjo Star">
+                    <span>Manjo Star</span>
+                </a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="/#projects">Projects</a></li>
+                        <li><a href="/about/">Services</a></li>
+                    </ul>
+                </nav>
+            </header>
 
-                <div id="main">
+            <div id="main">
 
-                        <section class="post">
-                                <header class="major">
-                                    <span class="date">2026</span>
-                                    <h1>Private DNS Toggle</h1>
-                                    <p>An android app on the Google Play store featuring a widget and tile for quickly toggling between private DNS settings.</p>
-                                </header>
-                                <div class="image main"><img src="images/pic01.jpg" alt="" /></div>
-                                
-                                <p>Please follow this guide to activate the permissions to get this working on your device. To view this guide in video format, visit my YouTube channel at <b><a href="https://www.youtube.com/@ManjoStar">https://www.youtube.com/@ManjoStar</a></b> </p>
-                                
-                                <div class="video-container" style="margin-bottom: 2em;">
-                                	<iframe width="1840" height="1035" src="https://www.youtube.com/embed/3PbqBAhQAAI" title="How To Block Ads On Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" style="max-width: 100%; height: auto; aspect-ratio: 16/9;" allowfullscreen></iframe>
-								</div>
+                <section class="welcome-section">
+                    <h2>Private DNS Toggle</h2>
+                    <p>Quick access to Private DNS settings with a system widget and tile — a product of Manjo Star's software offerings.</p>
+                </section>
 
-                                <p>To start off, you will need to have ADB (Android Debug Bridge) set up on your computer, and a USB cord to connect your phone.</p>
-                                <p>You can download adb at <a href="https://developer.android.com/tools/releases/platform-tools">https://developer.android.com/tools/releases/platform-tools</a></p>
-                                <p>Next, you will need to put your phone into Developer Mode. To do this, go to Settings > About phone, find the Build number, and tap it rapidly about seven times until you see a message saying "You are now a developer!"</p>
-								<p>In your Developer Settings, you can now enable "USB debugging"</p>
-								<p>Now, connect your phone to your computer with a USB cord. You may see a prompt on your phone asking you to allow USB debugging from your computer. Make sure to allow this.</p>
-								<p>Next, open a command prompt or terminal on your computer and navigate to the folder where you downloaded adb. Run the command "adb devices" to make sure your phone is properly connected. You should see your device listed.</p>
-								<p>Now, run the following command to grant the necessary permissions to the app:</p>
-								<p><code>adb shell pm grant com.manjo.star.privatednstoggle android.permission.WRITE_SECURE_SETTINGS</code></p>
-								<p>After running this command, you should be able to use the app to toggle your private DNS settings. You can also add the widget to your home screen or the tile to your quick settings for easy access.</p>
-								<p>If you have any questions or need further assistance, please feel free to contact me using the below contact information, or visit my YouTube channel for more guides and tutorials.</p>
+                <section class="posts">
+                    <article>
+                        <header>
+                            <h3>Overview</h3>
+                        </header>
+                        <a class="image fit"><img src="../images/dns_toggle.png" alt="Private DNS Toggle" /></a>
+                        <p>An innovative Android app that provides quick access to Private DNS settings through both a home screen widget and a system quick settings tile, enabling users to toggle DNS configurations with a single tap.</p>
+                    </article>
 
-                            </section>
+                    <article>
+                        <header>
+                            <h3>Features</h3>
+                        </header>
+                        <ul>
+                            <li>Home screen widget for quick access</li>
+                            <li>System quick settings tile integration</li>
+                            <li>One-tap DNS toggle functionality</li>
+                            <li>Real-time DNS status display</li>
+                            <li>Lightweight and efficient</li>
+                        </ul>
+                    </article>
 
-							<section style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 4em 0; width: 100%;">
-                                <h3>Privacy Policy</h3>
-                                <p style="margin: 0;"><a href="privacy/index.html">View Privacy Policy</a></p>
-                            </section>
+                    <article>
+                        <header>
+                            <h3>Technical Details</h3>
+                        </header>
+                        <p>Built with native Android development, leveraging the latest Android framework APIs for seamless integration with system settings and widgets. The app is optimized for performance and battery efficiency.</p>
+                    </article>
+                </section>
 
-                    </div>
+                <section style="text-align: center; padding: 2rem; border-top: 1px solid #eee; margin-top: 2rem;">
+                    <h3>Interested in this project?</h3>
+                    <p><a href="mailto:info@manjostar.com" class="button">Get in Touch</a></p>
+                    <p><a href="privacy/" style="color: #cfcfcf; text-decoration: none;">Privacy Policy</a></p>
+                </section>
 
-                <footer id="footer">
-                        <section class="split contact">
-                            <section>
-                                <h3>Need Help?</h3>
-                                <p><a href="mailto:help@manjostar.com">help@manjostar.com</a></p>
-                            </section>
-                            <section>
-                                <h3>General Inquiries</h3>
-                                <p><a href="mailto:info@manjostar.com">info@manjostar.com</a></p>
-                            </section>
-                        </section>
-                        <section class="split contact">
-                            <section>
-                                <h3>Website</h3>
-                                <p><a href="https://manjostar.com">https://manjostar.com</a></p>
-                            </section>
-                            <section>
-                                <h3>YouTube</h3>
-                                <p><a href="https://www.youtube.com/@ManjoStar">https://www.youtube.com/@ManjoStar</a></p>
-                            </section>
-                        </section>
-                    </footer>
             </div>
 
+            <footer id="footer">
+                <section class="split contact">
+                    <section>
+                        <h3>Need Help?</h3>
+                        <p><a href="mailto:help@manjostar.com">help@manjostar.com</a></p>
+                    </section>
+                    <section>
+                        <h3>General Inquiries</h3>
+                        <p><a href="mailto:info@manjostar.com">info@manjostar.com</a></p>
+                    </section>
+                <!-- external links removed: only email contacts kept -->
+            </footer>
+
+        </div>
+
         <script src="../assets/js/jquery.min.js"></script>
-            <script src="../assets/js/jquery.scrollex.min.js"></script>
-            <script src="../assets/js/jquery.scrolly.min.js"></script>
-            <script src="../assets/js/browser.min.js"></script>
-            <script src="../assets/js/breakpoints.min.js"></script>
-            <script src="../assets/js/util.js"></script>
-            <script src="../assets/js/main.js"></script>
 
     </body>
 </html>

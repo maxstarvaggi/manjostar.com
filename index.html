@@ -1,112 +1,72 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Manjo Star</title>
+        <title>Manjo Star - Software & Contracting</title>
         <link rel="icon" type="image/png" href="/images/favicon.png">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="Manjo Star — software products and contracting services for mobile, web, and embedded systems.">
         <link rel="stylesheet" href="assets/css/main.css" />
         <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-        <style>
-            /* Container for the side-by-side images */
-            .image-container-custom {
-                display: flex;
-                flex-wrap: wrap;       /* Allows wrapping to next line on mobile */
-                justify-content: center;
-                gap: 20px;             /* Space between photos */
-                margin: 2rem 0;
-            }
-
-            /* Styling for each individual image wrapper */
-            .image-wrapper {
-                flex: 1 1 300px;       /* Allow growth/shrink, base size 300px */
-                max-width: 450px;      /* Keep images from getting too huge */
-            }
-
-            .image-wrapper img {
-                width: 100%;           /* Fit the wrapper */
-                height: auto;          /* Maintain aspect ratio */
-                border-radius: 8px;
-                display: block;
-            }
-
-            /* Ensure full width on very small mobile screens */
-            @media screen and (max-width: 480px) {
-                .image-wrapper {
-                    max-width: 100%;
-                }
-            }
-        </style>
     </head>
     <body class="is-preload">
 
-        <div id="wrapper" class="fade-in">
-
-            <div id="intro">
-                <h1>Manjo<br />Star</h1>
-                <p>Continue scrolling to view my current projects..</p>
-                <ul class="actions">
-                    <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-                </ul>
-            </div>
+        <div id="wrapper">
 
             <header id="header">
-                <a href="index.html" class="logo">Welcome</a>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Manjo Star">
+                    <span>Manjo Star</span>
+                </a>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="/about/">About</a></li>
+                    </ul>
+                </nav>
             </header>
 
             <div id="main">
 
-                <article class="post featured">
-                    <header class="major">
-                        <span class="date">Hi there</span>
-                        <h2>To start off, here are my pets</h2>
-                        <p>Riki, Giovanni, and Reuben</p>
-                    </header>
-                    
-                    <div class="image-container-custom">
-                        <div class="image-wrapper">
-                            <img src="images/cats.JPG" alt="Riki and Giovanni" />
-                        </div>
-                        <div class="image-wrapper">
-                            <img src="images/reuben.JPG" alt="Reuben" />
-                        </div>
-                    </div>
-                </article>
+                <section class="welcome-section">
+                    <h2>Software & Contracting</h2>
+                    <p>We design, build, and deliver software products — and provide contracting services for mobile, web, and embedded projects.</p>
+                </section>
 
-                <section class="posts">
+                <section id="projects" class="posts">
                     <article>
                         <header>
                             <span class="date">2026</span>
                             <h2><a href="/PrivateDNSToggle/">Private DNS Toggle</a></h2>
                         </header>
                         <a href="/PrivateDNSToggle/" class="image fit"><img src="images/dns_toggle.png" alt="DNS Toggle App" /></a>
-                        <p>An Android widget & tile project to toggle Private DNS settings.</p>
+                        <p>An Android widget & tile project to quickly toggle Private DNS settings with system-level control.</p>
                         <ul class="actions special">
-                            <li><a href="/PrivateDNSToggle/" class="button">View Details</a></li>
+                            <li><a href="/PrivateDNSToggle/" class="button">Learn More</a></li>
                         </ul>
                     </article>
 
                     <article>
                         <header>
                             <span class="date">2026</span>
-                            <h2>Fasting Tracker Pro</h2>
+                            <h2><a href="/FastingTrackerPro/">Fasting Tracker Pro</a></h2>
                         </header>
-                        <a class="image fit"><img src="images/blank.png" alt="Coming Soon" /></a>
-                        <p>An Android app for tracking fasts</p>
+                        <a href="/FastingTrackerPro/" class="image fit"><img src="images/blank.png" alt="Fasting Tracker" /></a>
+                        <p>A comprehensive Android app for tracking intermittent fasts with advanced analytics and insights.</p>
                         <ul class="actions special">
-                            <li><a class="button">TBD</a></li>
+                            <li><a href="/FastingTrackerPro/" class="button">Learn More</a></li>
                         </ul>
                     </article>
 
                     <article>
                         <header>
-                            <span class="date">TBD</span>
-                            <h2>Future Projects</h2>
+                            <span class="date">Coming Soon</span>
+                            <h2>Future Innovations</h2>
                         </header>
                         <a class="image fit"><img src="images/blank.png" alt="Coming Soon" /></a>
-                        <p>I am actively working on both Android and iOS projects. More coming soon..</p>
+                        <p>Exciting new projects for both Android and iOS platforms. Stay tuned for announcements.</p>
                         <ul class="actions special">
-                            <li><a class="button">TBD</a></li>
+                            <li><button class="button" style="opacity: 0.6; cursor: default;">Coming Soon</button></li>
                         </ul>
                     </article>
                 </section>
@@ -124,27 +84,12 @@
                         <p><a href="mailto:info@manjostar.com">info@manjostar.com</a></p>
                     </section>
                 </section>
-                <section class="split contact">
-                    <section>
-                        <h3>Website</h3>
-                        <p><a href="https://manjostar.com">manjostar.com</a></p>
-                    </section>
-                    <section>
-                        <h3>YouTube</h3>
-                        <p><a href="https://www.youtube.com/@ManjoStar">@ManjoStar</a></p>
-                    </section>
-                </section>
+                <!-- external links removed: only email contacts kept -->
             </footer>
 
         </div>
 
         <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/jquery.scrollex.min.js"></script>
-        <script src="assets/js/jquery.scrolly.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
 
     </body>
 </html>
