@@ -911,7 +911,7 @@ body.home .posts article .button.disabled {
    ============================================ */
 
 body.subpage .welcome-section {
-  text-align: left;
+  text-align: center;
   padding: 2.5rem max(2rem, calc(50% - 480px));
 }
 
@@ -987,6 +987,10 @@ body.subpage .posts article:hover .image img {
   transform: none;
 }
 
+body.subpage .posts article {
+  text-align: center;
+}
+
 body.subpage .posts article p,
 body.subpage .posts article ul li {
   font-size: 0.975rem;
@@ -1001,6 +1005,10 @@ body.subpage .posts article ul {
   list-style: disc;
   color: #3a3a3a;
   margin-bottom: 0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
 }
 
 body.subpage .posts article ul li:last-child {
