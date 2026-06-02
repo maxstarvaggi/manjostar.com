@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Private DNS Toggle - Manjo Star</title>
-        <link rel="icon" type="image/png" href="/images/favicon.png">
+        <link rel="icon" type="image/png" href="/images/logo.png">
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="../assets/css/main.css" />
@@ -42,6 +42,12 @@
                     </article>
 
                     <article>
+                        <div class="video-wrapper">
+                            <iframe width="1600" height="662" src="https://www.youtube.com/embed/3PbqBAhQAAI" title="How To Block Ads On Android" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                    </article>
+
+                    <article>
                         <header>
                             <h3>Features</h3>
                         </header>
@@ -60,12 +66,30 @@
                         </header>
                         <p>Built with native Android development, leveraging the latest Android framework APIs for seamless integration with system settings and widgets. The app is optimized for performance and battery efficiency.</p>
                     </article>
+
+                    <article>
+                        <header>
+                            <h3>Setup Instructions</h3>
+                        </header>
+                        <p>Please follow this guide to activate the permissions to get this working on your device. To view this guide in video format, visit the YouTube channel at <b><a href="https://www.youtube.com/@ManjoStar">https://www.youtube.com/@ManjoStar</a></b></p>
+                        
+                        <p>To start off, you will need to have ADB (Android Debug Bridge) set up on your computer, and a USB cord to connect your phone.</p>
+                        <p>You can download adb at<a href="https://developer.android.com/tools/releases/platform-tools"> https://developer.android.com/tools/releases/platform-tools</a></p>
+                        <p>Next, you will need to put your phone into Developer Mode. To do this, go to Settings &gt; About phone, find the Build number, and tap it rapidly about seven times until you see a message saying "You are now a developer!"</p>
+                        <p>In your Developer Settings, you can now enable "USB debugging"</p>
+                        <p>Now, connect your phone to your computer with a USB cord. You may see a prompt on your phone asking you to allow USB debugging from your computer. Make sure to allow this.</p>
+                        <p>Next, open a command prompt or terminal on your computer and navigate to the folder where you downloaded adb. Run the command "adb devices" to make sure your phone is properly connected. You should see your device listed.</p>
+                        <p>Now, run the following command to grant the necessary permissions to the app:</p>
+                        <p><code>adb shell pm grant com.manjo.star.privatednstoggle android.permission.WRITE_SECURE_SETTINGS</code></p>
+                        <p>After running this command, you should be able to use the app to toggle your private DNS settings. You can also add the widget to your home screen or the tile to your quick settings for easy access.</p>
+                        <p>If you have any questions or need further assistance, please feel free to contact using the below contact information, or visit the YouTube channel for more guides and tutorials.</p>
+                    </article>
                 </section>
 
-                <section style="text-align: center; padding: 2rem; border-top: 1px solid #eee; margin-top: 2rem;">
+                <section class="cta-section">
                     <h3>Interested in this project?</h3>
                     <p><a href="mailto:info@manjostar.com" class="button">Get in Touch</a></p>
-                    <p><a href="privacy/" style="color: #cfcfcf; text-decoration: none;">Privacy Policy</a></p>
+                    <p><a href="privacy/">Privacy Policy</a></p>
                 </section>
 
             </div>
