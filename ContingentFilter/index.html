@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Contingent Filter - Manjo Star</title>
+        <link rel="icon" type="image/png" href="/images/logo.png">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="description" content="Contingent Filter is a Chrome extension that hides contingent homes from Zillow's map and results list.">
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    </head>
+    <body class="is-preload subpage">
+
+        <div id="wrapper">
+
+            <header id="header"></header>
+
+            <div id="main">
+
+                <section class="welcome-section">
+                    <h2>Contingent Filter</h2>
+                    <p>A Chrome extension that hides contingent homes from Zillow searches, so the map only shows homes you can still buy — a product of Manjo Star's software offerings.</p>
+                    <a href="https://chromewebstore.google.com/detail/fogeebfjjkhdjdbkddbdpcmphckemkon" target="_blank" rel="noopener" class="button" style="margin-top:1rem;">Get it on the Chrome Web Store</a>
+                </section>
+
+                <section class="posts">
+                    <article>
+                        <header>
+                            <h3>Overview</h3>
+                        </header>
+                        <a class="image fit"><img src="/images/contingent_filter.png" alt="Contingent Filter" /></a>
+                        <p>Zillow's search results label contingent homes as "for sale," so they show up on the map right next to homes that are actually available. Contingent Filter checks each listing's real status and removes the contingent ones from both the map and the results list.</p>
+                    </article>
+
+                    <article>
+                        <header>
+                            <h3>Features</h3>
+                        </header>
+                        <ul>
+                            <li>Hides contingent homes from the map and the results list</li>
+                            <li>Optional setting to also hide pending and under-contract homes</li>
+                            <li>Follows the map: only homes in the current view are checked</li>
+                            <li>Toolbar badge shows how many homes are hidden in the current area</li>
+                            <li>Statuses are remembered for 12 hours, so repeat searches are instant</li>
+                            <li>No account, no tracking, and no data leaves your browser</li>
+                        </ul>
+                    </article>
+
+                    <article>
+                        <header>
+                            <h3>How It Works</h3>
+                        </header>
+                        <p>When you search on Zillow, the extension reads the public detail page for each home in view to find its status. Contingent homes are hidden as soon as their status comes back. The first time you view an area, contingent pins disappear over a few seconds; after that, they are hidden right away.</p>
+                        <p>When you're zoomed far out, Zillow groups homes into numbered bubbles. Those groups can't be filtered until you zoom in far enough to see individual homes.</p>
+                    </article>
+
+                    <article>
+                        <header>
+                            <h3>Technical Details</h3>
+                        </header>
+                        <p>Built as a Manifest V3 Chrome extension that runs only on zillow.com. It needs just two permissions: storage, for your settings and the 12-hour status cache, and access to zillow.com, to hide listings and read their status. Contingent Filter is an independent project and is not affiliated with, endorsed by, or sponsored by Zillow.</p>
+                    </article>
+                </section>
+
+                <section class="cta-section">
+                    <h3>Interested in this project?</h3>
+                    <p><a href="mailto:info@manjostar.com" class="button">Get in Touch</a></p>
+                    <p><a href="privacy/">Privacy Policy</a></p>
+                </section>
+
+            </div>
+
+            <footer id="footer"></footer>
+
+        </div>
+
+        <script src="/assets/js/components.js"></script>
+
+    </body>
+</html>
